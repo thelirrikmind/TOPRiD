@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+
+
+{% block title%}
+Труппа
+{% endblock %}
+
+{% block content%}
+
+<h1 class="text-center"><big>Наша труппа</big></h1>
+
+{% if image  %}
+
+{% for el in images %}
+<div class="text-center alert-warning mt-4">
+    <h1>{{ el.title }}</h1>
+
+        {% if el.image %}
+    <div style="padding: 5%">
+        <img src="{{ el.image.url}}" width="100%" alt="lorem" class="border">
+    </div>
+        {% endif %}
+</div>
+
+{% endfor %}
+
+{% else %}
+
+<p>У нас нет фото</p>
+
+{% endif %}
+
+{% endblock %}
+
+

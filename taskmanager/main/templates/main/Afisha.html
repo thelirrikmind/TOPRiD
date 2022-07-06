@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+
+
+{% block title%}
+Афиши
+{% endblock %}
+
+{% block content%}
+
+<h1 class="text-center"><big>Афиши</big></h1>
+
+{% if afisha  %}
+
+{% for el in afishi %}
+<div style="padding: 5%" class="alert alert-warning mt-2">
+    <div class><img src="{{ el.image.url}}" width="100%" alt="lorem" class="border"></div>
+</div>
+{% endfor %}
+
+{% else %}
+
+<p>У нас нет Афиш</p>
+
+{% endif %}
+
+{% endblock %}
+
+

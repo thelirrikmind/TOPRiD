@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+
+
+{% block title%}
+Фотогалерея
+{% endblock %}
+
+{% block content%}
+
+<h1 class="text-center"><big>Фотогалерея</big></h1>
+
+{% for album in albums %}
+
+<div class="text-center alert-warning mt-2">
+    <h1>{{ album.title }}</h1>
+</div>
+{% for photo in album.photos.all %}
+
+<div class><img src="{{ photo.image.url}}" width="567" height="756" alt="lorem" class="border"></div>
+
+
+{% endfor %}
+{% endfor %}
+
+{% endblock %}
+
+<!--<div class="grid">-->
+<!--    <a data-fancybox="gallery" href="путь_к_исходному_изображению">-->
+<!--        <img class="img-fluid" src="{{ photo.image.url}}" alt="">-->
+<!--    </a>-->
+<!--</div>-->
